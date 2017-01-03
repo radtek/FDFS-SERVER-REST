@@ -1,0 +1,203 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.hisign</groupId>
+  <artifactId>fdfs-server-rest</artifactId>
+  <packaging>jar</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <name>fdfs-server-rest</name>
+  <url>http://maven.apache.org</url>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	<spring.version>4.2.5.RELEASE</spring.version>
+	<springmvc.version>4.2.5.RELEASE</springmvc.version>
+	<!-- log4j日志文件管理包版本-hisign -->
+	<slf4j.version>1.7.7</slf4j.version>
+	<log4j.version>1.2.17</log4j.version>
+  </properties>
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    <!-- 如果要使用tomcat server -->
+	<dependency>
+		<groupId>org.apache.tomcat.embed</groupId>
+		<artifactId>tomcat-embed-core</artifactId>
+		<version>7.0.55</version>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.tomcat.embed</groupId>
+		<artifactId>tomcat-embed-logging-juli</artifactId>
+		<version>7.0.55</version>
+	</dependency>
+	<!-- *** dubbo BEGIN -->
+	<dependency>
+	  <groupId>com.hisign</groupId>
+	  <artifactId>dubbox</artifactId>
+	  <version>2.8.4</version>
+	</dependency>
+	<dependency>
+	  <groupId>org.javassist</groupId>
+	  <artifactId>javassist</artifactId>
+	  <version>3.18.1-GA</version>
+	</dependency>
+	<!-- ### dubbo END -->
+	<dependency>
+		<groupId>org.jboss.resteasy</groupId>
+		<artifactId>resteasy-jaxrs</artifactId>
+		<version>3.0.7.Final</version>
+	</dependency>
+	<dependency>
+		<groupId>org.jboss.resteasy</groupId>
+		<artifactId>resteasy-client</artifactId>
+		<version>3.0.7.Final</version>
+	</dependency>
+	<dependency>
+		<groupId>javax.validation</groupId>
+		<artifactId>validation-api</artifactId>
+		<version>1.0.0.GA</version>
+	</dependency>
+	<!-- 如果要使用json序列化 -->
+	<dependency>
+		<groupId>org.jboss.resteasy</groupId>
+		<artifactId>resteasy-jackson-provider</artifactId>
+		<version>3.0.7.Final</version>
+	</dependency>
+	<!-- *** zkclient BEGIN -->
+	<dependency>
+	  <groupId>com.101tec</groupId>
+	  <artifactId>zkclient</artifactId>
+	  <version>0.8</version>
+	</dependency> 
+	<!-- ### zkclient END -->
+	<!-- json数据 -->
+	<dependency>
+		<groupId>org.codehaus.jackson</groupId>
+		<artifactId>jackson-mapper-asl</artifactId>
+		<version>1.9.13</version>
+	</dependency>
+	<!-- *** hisign log BEGIN -->
+  	<dependency>
+		<groupId>log4j</groupId>
+		<artifactId>log4j</artifactId>
+		<version>${log4j.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.slf4j</groupId>
+		<artifactId>slf4j-api</artifactId>
+		<version>${slf4j.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.slf4j</groupId>
+		<artifactId>slf4j-log4j12</artifactId>
+		<version>${slf4j.version}</version>
+	</dependency>
+	<!-- ### hisign log END -->
+	<!-- *** spring BEGIN -->
+  	<dependency>
+	  <groupId>org.springframework</groupId>
+	  <artifactId>spring-core</artifactId>
+	  <version>${spring.version}</version>
+	</dependency>  
+  	<dependency>
+	  <groupId>org.springframework</groupId>
+	  <artifactId>spring-beans</artifactId>
+	  <version>${spring.version}</version>
+	</dependency>  
+  	<dependency>
+	  <groupId>org.springframework</groupId>
+	  <artifactId>spring-context</artifactId>
+	  <version>${spring.version}</version>
+	</dependency> 
+  	<dependency>
+	  <groupId>org.springframework</groupId>
+	  <artifactId>spring-context-support</artifactId>
+	  <version>${spring.version}</version>
+	</dependency> 
+	<dependency>
+	  <groupId>org.springframework</groupId>
+	  <artifactId>spring-tx</artifactId>
+	  <version>${spring.version}</version>
+	</dependency> 
+	<dependency>
+	  <groupId>org.springframework</groupId>
+	  <artifactId>spring-test</artifactId>
+	  <version>${spring.version}</version>
+	</dependency>
+
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-webmvc</artifactId>
+		<version>${springmvc.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-web</artifactId>
+		<version>${springmvc.version}</version>
+	</dependency>
+	<!-- ### spring END -->
+	<dependency>
+	  <groupId>commons-collections</groupId>
+	  <artifactId>commons-collections</artifactId>
+	  <version>3.2.1</version>
+	</dependency>
+	<dependency>
+      <groupId>org.jboss.resteasy</groupId>
+      <artifactId>resteasy-multipart-provider</artifactId>
+      <version>3.0.7.Final</version>
+    </dependency>
+	<!-- https://mvnrepository.com/artifact/com.github.tobato/fastdfs-client -->
+	<dependency>
+		<groupId>com.github.tobato</groupId>
+		<artifactId>fastdfs-client</artifactId>
+		<version>1.25.2-cl-SNAPSHOT</version>
+		<!--<version>1.25.2-RELEASE</version>-->
+	</dependency>
+	<dependency>
+		<groupId>com.hisign</groupId>
+		<artifactId>sso-api-common</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</dependency>
+	<dependency>
+		<groupId>com.hisign</groupId>
+		<artifactId>sdk-config</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</dependency>
+  </dependencies>
+  <build>
+	<plugins>
+		<plugin>
+		  <groupId>org.apache.maven.plugins</groupId>  
+		  <artifactId>maven-jar-plugin</artifactId>  
+		  <configuration>  
+			<archive>  
+			  <manifest>  
+				<addClasspath>true</addClasspath>  
+				<classpathPrefix></classpathPrefix>  
+			  </manifest>  
+			</archive>
+		  </configuration>  
+		</plugin>  
+		<plugin>  
+		    <artifactId>maven-assembly-plugin</artifactId>  
+		    <executions>  <!--执行器 mvn assembly:assembly-->  
+		        <execution>  
+		            <id>fdfs-server-rest-zip</id><!--名字任意 -->    
+		        <phase>package</phase><!-- 绑定到package生命周期阶段上 -->    
+		        <goals>    
+		           <goal>single</goal><!-- 只运行一次 -->    
+		        </goals>    
+		            <configuration>  
+		                     <descriptors> <!--描述文件路径-->  
+		                          <descriptor>zip.xml</descriptor>  
+		                    </descriptors>  
+		            </configuration>  
+		        </execution>  
+		    </executions>  
+		 </plugin>  
+	</plugins>
+  </build>
+</project>

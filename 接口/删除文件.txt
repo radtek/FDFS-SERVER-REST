@@ -1,0 +1,30 @@
+POST
+URL:
+http://ip:port/fdfs/api/users/list
+http://127.0.0.1:58820/fdfs/api/file/delete
+
+请求头：
+Content-Type: application/json
+
+请求体：
+{
+    "filePath": "M00/00/03/rBAAcFhk0CyARFsFAAAs9wfjCqo026.png"
+}
+
+响应头：
+无
+
+
+响应体：
+{
+    "message": "filePath不合法",
+    "flag": "0"
+}
+{
+    "message": "删除成功",
+    "flag": "1"
+}
+
+
+
+
